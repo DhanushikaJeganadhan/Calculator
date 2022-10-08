@@ -27,11 +27,13 @@
                 <table>
                     <tr>
                         <td> <img src="images/check.png" alt="" class="correct" onclick="correct()"></td>
+                        <td><img src="images/thumbs-up.png" alt=""class="done" onclick="done(event)"></td>
                     </tr>
                 </table>
             </div>
 
     </div>
+    
     <script>
         function cancel(){
             const list=document.getElementById("list")
@@ -40,12 +42,18 @@
         function correct(){
             const list=document.getElementById("list")
             const div=document.getElementById("show")
-            div.innerHTML= div.innerHTML + "<div onclick=\"itemclick(event)\">" + list.value +"</div>"
+            div.innerHTML= div.innerHTML + "<div onclick=\"itemclick(event)\"class=\"newdiv\">" + list.value +"</div>"
         }
         function itemclick(id){
             const list=document.getElementById("list")
             list.value=id.target.innerHTML
         }
+
+        function done(id){
+            const list=document.getElementById("list")
+            
+        }
+        
     </script>
 </body>
 </html>
