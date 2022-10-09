@@ -10,7 +10,10 @@
 <body>
     <div class="box">
        
-            <div id="show"></div>
+            <div id="show">
+
+                <s>hello</s>
+            </div>
 
             <div class="div">
                 <table>
@@ -35,6 +38,8 @@
     </div>
     
     <script>
+        var item;
+
         function cancel(){
             const list=document.getElementById("list")
             list.value="";
@@ -42,17 +47,20 @@
         function correct(){
             const list=document.getElementById("list")
             const div=document.getElementById("show")
-            div.innerHTML= div.innerHTML + "<div onclick=\"itemclick(event)\"class=\"newdiv\">" + list.value +"</div>"
+            div.innerHTML= div.innerHTML + "<div onclick=\"itemclick(event)\"class=\"newdiv\"><p>" + list.value +"</p><img src=\"images/thumbs-up.png\" class=\"done\" onclick=\"done(event)\">"+"</div>"
         }
         function itemclick(id){
+            item=id.target;
             const list=document.getElementById("list")
-            list.value=id.target.innerHTML
+            list.value=item.innerHTML
+            // id.target.innerHTML="<p style=\"text-decoration: line-through;\">"+id.target.innerText+"</p>"
         }
 
         function done(id){
-            const list=document.getElementById("list")
+            item.innerHTML="<p style=\"text-decoration: line-through;\">"+item.innerText+"</p>"
             
         }
+        
         
     </script>
 </body>
